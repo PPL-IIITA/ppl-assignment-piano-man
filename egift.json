@@ -1,0 +1,44 @@
+{
+    "e0":{
+        "type":"essential",
+        "price":50,
+        "value":" ",
+        "from":" ",
+        "to":" "
+    },
+    "e1":{
+        "type":"essential",
+        "price":40,
+        "value":" ",
+        "from":" ",
+        "to":" "
+    },
+    "e2":{
+        "type":"essential",
+        "price":30,
+        "value":" ",
+        "from":" ",
+        "to":" "
+    },
+    "e3":{
+        "type":"essential",
+        "price":20,
+        "value":" ",
+        "from":" ",
+        "to":" "
+    },
+    "e4":{
+        "type":"essential",
+        "price":60,
+        "value":" ",
+        "from":" ",
+        "to":" "
+    },
+    "e5":{
+        "type":"essential",
+        "price":45,
+        "value":" ",
+        "from":" ",
+        "to":" "
+    }
+}

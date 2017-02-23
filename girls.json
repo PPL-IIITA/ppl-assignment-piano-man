@@ -1,0 +1,42 @@
+{
+    "g0":{
+        
+        "attractiveness":8,
+        "intelligence":6,
+        "maintenance":300,
+        "committed":"false",
+        "boyname":" ",
+        "type":" "
+
+    },
+    "g1":{
+        
+        "attractiveness":15,
+        "intelligence":7,
+        "maintenance":450,
+        "committed":"false",
+        "boyname":" ",
+        "type":" "
+
+    },
+    "g2":{
+        
+        "attractiveness":11,
+        "intelligence":7,
+        "maintenance":700,
+        "committed":"false",
+        "boyname":" ",
+        "type":" "
+
+    },
+    "g3":{
+    
+        "attractiveness":10,
+        "intelligence":9,
+        "maintenance":900,
+        "committed":"false",
+        "boyname":" ",
+        "type":" "
+
+    }
+}

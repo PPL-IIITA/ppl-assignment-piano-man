@@ -1,0 +1,80 @@
+{
+    "b0":{
+        
+        "attractiveness":10,
+        "intelligence":9,
+        "budget":500,
+        "minval":6,
+        "committed":"false",
+        "girlname":" ",
+        "type":" "
+
+    },
+    "b1":{
+        
+        "attractiveness":15,
+        "intelligence":8,
+        "budget":600,
+        "minval":7,
+        "committed":"false",
+        "girlname":" ",
+        "type":" "
+
+    },
+    "b2":{
+        
+        "attractiveness":3,
+        "intelligence":6,
+        "budget":900,
+        "minval":8,
+        "committed":"false",
+        "girlname":" ",
+        "type":" "
+
+    },
+    "b3":{
+    
+        "attractiveness":16,
+        "intelligence":10,
+        "budget":400,
+        "minval":9,
+        "committed":"false",
+        "girlname":" ",
+        "type":" "
+
+    },
+    "b4":{
+        
+        "attractiveness":17,
+        "intelligence":8,
+        "budget":780,
+        "minval":8,
+        "committed":"false",
+        "girlname":" ",
+        "type":" "
+
+    },
+    "b5":{
+        
+        "attractiveness":23,
+        "intelligence":4,
+        "budget":500,
+        "minval":10,
+        "committed":"false",
+        "girlname":" ",
+        "type":" "
+        
+
+    },
+    "b6":{
+        
+        "attractiveness":21,
+        "intelligence":8,
+        "budget":1000,
+        "minval":5,
+        "committed":"false",
+        "girlname":" ",
+        "type":" "
+
+    }
+}
