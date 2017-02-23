@@ -107,7 +107,7 @@ for(i=0;i<7;i++)
      var btype = [
          "miser",
          "generous",
-         "geek"
+         "geek`"
      ];
      var gtype = [
          "choosy",
@@ -123,6 +123,7 @@ for(i=0;i<7;i++)
          boysarr[k]["type"]=btype[rno];
          
      }
+     
 
  }
  for(l=0;l<4;l++)
@@ -148,40 +149,54 @@ for(i=0;i<7;i++)
      giftsarr.sort(function(a, b) {
     return parseFloat(a.price) - parseFloat(b.price);
 });
+
    
      //var len = Object.keys(pjson).length;
      for(i=0;i<7;i++)
      {
+         
          if(boysarr[i].committed=="true")
          {
              var ty = boysarr[i].type;
              switch(ty)
              {
                  case "miser":
+                 //default :
                  var k = 0;
                  var gname = boysarr[i].girlname;
                  total = 0;
-                 while(total<=gjson[gname].maintenance)
+                 while(total<=gjson[gname].maintenance&&k<=15)
                  {
                      if(giftsarr[k].fro==" ")
                      {
                          total = total + giftsarr[k].price;
+                         console.log(total);
                          if(total<gjson[gname].maintenance)
                          {
                              giftsarr[k].fro=boysarr[i].name;
                              giftsarr[k].to=gname;
+                             var print = boysarr[i].name+"gave"+giftsarr[k].name+"to"+gname;
+                             fs.appendFile("/home/piano-man/ppl_assignment/gifts.txt",print+"\n",function(err){
+                                 if(err){
+                                     return err;
+                                 }
+                             });
                              k++;
                          }
-                         else
-                         total = total - giftsarr[k].price;
+                         else 
+                         break;
+                         //else
+                         //total = total - giftsarr[k].price;
                      }
+                     else
+                     k++;
                  }
                  break;
                  case  "geek":
                  var k = 0;
                  var gname = boysarr[i].girlname;
                  total = 0;
-                 while(total<=gjson[gname].maintenance)
+                 while(total<=gjson[gname].maintenance&&k<=15)
                  {
                      if(giftsarr[k].fro==" ")
                      {
@@ -190,11 +205,21 @@ for(i=0;i<7;i++)
                          {
                              giftsarr[k].fro=boysarr[i].name;
                              giftsarr[k].to=gname;
+                             var print = boysarr[i].name+"gave"+giftsarr[k].name+"to"+gname;
+                             fs.appendFile("/home/piano-man/ppl_assignment/gifts.txt",print+"\n",function(err){
+                                 if(err){
+                                     return err;
+                                 }
+                             });
                              k++;
                          }
                          else
-                         total = total-giftsarr[k].price;
+                         break;
+                         //else
+                         //total = total-giftsarr[k].price;
                      }
+                     else
+                     k++;
                  }
                  if(total<boysarr[i].budget)
                  {
@@ -208,6 +233,12 @@ for(i=0;i<7;i++)
                              {
                                  giftsarr[m].fro=boysrr[i].name;
                                  giftsarr[m].to=gname;
+                                 var print = boysarr[i].name+"gave"+giftsarr[m].name+"to"+gname;
+                             fs.appendFile("/home/piano-man/ppl_assignment/gifts.txt",print+"\n",function(err){
+                                 if(err){
+                                     return err;
+                                 }
+                             });
                                  break;
 
                              }
@@ -231,13 +262,24 @@ for(i=0;i<7;i++)
                          {
                              giftsarr[k].fro=boysarr[i].name;
                              giftsarr[k].to=gname;
+                             var print = boysarr[i].name+"gave"+giftsarr[k].name+"to"+gname;
+                             fs.appendFile("/home/piano-man/ppl_assignment/gifts.txt",print+"\n",function(err){
+                                 if(err){
+                                     return err;
+                                 }
+                             });
                              k++;
                          }
+                         else
+                         break;
                      }
+                     else
+                     k++;
                  }
                  break;
              }
-             boysarr[i]["totalspent"]=total;
+             //boysarr[i]["totalspent"]=total;
+             
          }
          
 
@@ -246,6 +288,9 @@ for(i=0;i<7;i++)
      
 
  }
+ driver();
+ assign();
+ gifting();
 function happiness()
 {
 

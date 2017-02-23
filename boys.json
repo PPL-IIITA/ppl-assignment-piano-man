@@ -6,8 +6,8 @@
         "budget":500,
         "minval":6,
         "committed":"false",
-        "girlname":" ",
-        "type":" "
+        "girlname":" "
+        
 
     },
     "b1":{
@@ -17,8 +17,8 @@
         "budget":600,
         "minval":7,
         "committed":"false",
-        "girlname":" ",
-        "type":" "
+        "girlname":" "
+        
 
     },
     "b2":{
@@ -28,8 +28,8 @@
         "budget":900,
         "minval":8,
         "committed":"false",
-        "girlname":" ",
-        "type":" "
+        "girlname":" "
+        
 
     },
     "b3":{
@@ -39,8 +39,8 @@
         "budget":400,
         "minval":9,
         "committed":"false",
-        "girlname":" ",
-        "type":" "
+        "girlname":" "
+        
 
     },
     "b4":{
@@ -50,8 +50,8 @@
         "budget":780,
         "minval":8,
         "committed":"false",
-        "girlname":" ",
-        "type":" "
+        "girlname":" "
+        
 
     },
     "b5":{
@@ -61,8 +61,8 @@
         "budget":500,
         "minval":10,
         "committed":"false",
-        "girlname":" ",
-        "type":" "
+        "girlname":" "
+        
         
 
     },
@@ -73,8 +73,8 @@
         "budget":1000,
         "minval":5,
         "committed":"false",
-        "girlname":" ",
-        "type":" "
+        "girlname":" "
+    
 
     }
 }
