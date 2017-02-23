@@ -142,23 +142,102 @@ for(i=0;i<7;i++)
      giftsarr = new Array(50);
       for(i=0;i<16;i++)
      {
-         giftsarr[i] = new gift("p"+i,pjson["p"+i].type,gjson["p"+i].price,gjson["p"+i].value,pjson["p"+i].fro,gjson["p"+i].to);
+         giftsarr[i] = new gift("p"+i,pjson["p"+i].type,pjson["p"+i].price,pjson["p"+i].value,pjson["p"+i].fro,pjson["p"+i].to);
 
      }
+     giftsarr.sort(function(a, b) {
+    return parseFloat(a.price) - parseFloat(b.price);
+});
    
      //var len = Object.keys(pjson).length;
      for(i=0;i<7;i++)
      {
          if(boysarr[i].committed=="true")
          {
-             if(giftsarr[i].fro==" ")
+             var ty = boysarr[i].type;
+             switch(ty)
              {
-                 if()
+                 case "miser":
+                 var k = 0;
+                 var gname = boysarr[i].girlname;
+                 total = 0;
+                 while(total<=gjson[gname].maintenance)
                  {
+                     if(giftsarr[k].fro==" ")
+                     {
+                         total = total + giftsarr[k].price;
+                         if(total<gjson[gname].maintenance)
+                         {
+                             giftsarr[k].fro=boysarr[i].name;
+                             giftsarr[k].to=gname;
+                             k++;
+                         }
+                         else
+                         total = total - giftsarr[k].price;
+                     }
+                 }
+                 break;
+                 case  "geek":
+                 var k = 0;
+                 var gname = boysarr[i].girlname;
+                 total = 0;
+                 while(total<=gjson[gname].maintenance)
+                 {
+                     if(giftsarr[k].fro==" ")
+                     {
+                         total = total + giftsarr[k].price;
+                         if(total<gjson[gname].maintenance)
+                         {
+                             giftsarr[k].fro=boysarr[i].name;
+                             giftsarr[k].to=gname;
+                             k++;
+                         }
+                         else
+                         total = total-giftsarr[k].price;
+                     }
+                 }
+                 if(total<boysarr[i].budget)
+                 {
+                     for(m=0;m<16;m++)
+                     {
+                         if(giftsarr[m].fro==" ")
+                         {
+                         if(giftsarr[m].type="luxury")
+                         {
+                             if(giftsarr[m].price<(boysarr[i].budget-total))
+                             {
+                                 giftsarr[m].fro=boysrr[i].name;
+                                 giftsarr[m].to=gname;
+                                 break;
+
+                             }
+
+                         }
+                         } 
+                    }
 
                  }
-
+                 break;
+                 case "generous":
+                 var k = 0;
+                 var gname = boysarr[i].girlname;
+                 total = 0;
+                 while(total<boysarr[i].budget)
+                 {
+                     if(giftsarr[k].fro==" ")
+                     {
+                         total = total + giftsarr[k].price;
+                         if(total<boysarr[i].budget)
+                         {
+                             giftsarr[k].fro=boysarr[i].name;
+                             giftsarr[k].to=gname;
+                             k++;
+                         }
+                     }
+                 }
+                 break;
              }
+             boysarr[i]["totalspent"]=total;
          }
          
 
@@ -167,8 +246,11 @@ for(i=0;i<7;i++)
      
 
  }
- driver();
-// gift();
-//exports.driver =  driver;
-//exports.boysarr=boysarr;
-//exports.girlsarr=girlsarr;
+function happiness()
+{
+
+}
+function compatibility()
+{
+    
+}

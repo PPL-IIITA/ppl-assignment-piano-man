@@ -1,1 +1,9 @@
-b0 is dating g2b1 is dating g3b3 is dating g1
+b0 is dating g2b1 is dating g3b3 is dating g1b0 is dating g2
+b1 is dating g3
+b3 is dating g1
+b0 is dating g2
+b3 is dating g1
+b1 is dating g3
+b0 is dating g2
+b1 is dating g3
+b3 is dating g1
