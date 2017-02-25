@@ -37,6 +37,17 @@ class gift{
         this.to = to;
     }
 }
+class couple{
+    constructor(boyname,girlname,boyhap,girlhap,hap,comp)
+    {
+        this.boyname = boyname;
+        this.girlname = girlname;
+        this.boyhap = boyhap;
+        this.girlhap = girlhap;
+        this.hap = hap;
+        this.comp = comp;
+    }
+}
 
  function driver()
  {
@@ -191,6 +202,7 @@ for(i=0;i<7;i++)
                      else
                      k++;
                  }
+                 boysarr[i]["totalspent"]=total;
                  break;
                  case  "geek":
                  var k = 0;
@@ -248,6 +260,7 @@ for(i=0;i<7;i++)
                     }
 
                  }
+                 boysarr[i]["totalspent"]=total;
                  break;
                  case "generous":
                  var k = 0;
@@ -276,9 +289,12 @@ for(i=0;i<7;i++)
                      else
                      k++;
                  }
+                 boysarr[i]["totalspent"]=total;
                  break;
              }
-             //boysarr[i]["totalspent"]=total;
+             
+             console.log(boysarr[i].name);
+             console.log(boysarr[i].totalspent);
              
          }
          
@@ -293,8 +309,101 @@ for(i=0;i<7;i++)
  gifting();
 function happiness()
 {
+    couplesarr = new Array(50);
+    var k = 0;
+for(i=0;i<7;i++)
+{
+    if(boysarr[i].committed=="true")
+    {
+        var ty = boysarr[i].type;
+        var gname = boysarr[i].girlname;
+        for(j=0;j<4;j++)
+        {
+            if(girlsarr[j].name==gname)
+            {
+                gty=girlsarr[j].type;
+                gmain = girlsarr[j].maintenance;
+                gint = girlsarr[j].intelligence;
+            }
+        }
+        switch(ty)
+        {
+            case "miser": 
+            bhap = boysarr[i].budget-boysarr[i].total;
+            if(gty=="choosy")
+            {
+                ghap=Math.log((boysarr[i].totalspent-gmain));
 
+ 
+            }
+            else if (gty=="normal")
+            {
+                ghap=boysarr[i].totalspent-gmain;
+
+            }
+            else if(gty=="desperate")
+            {
+                ghap=Math.exp(boysarr[i].totalspent-gmain);
+
+            }
+            hap=bhap+ghap;
+            couplesarr[k] = new couple(boysarr[i].name,gname,bhap,ghap,hap,0);
+            k++; 
+            
+            break;
+            case "generous":
+            if(gty=="choosy")
+            {
+                ghap=Math.log((boysarr[i].totalspent-gmain));
+
+ 
+            }
+            else if (gty=="normal")
+            {
+                ghap=boysarr[i].totalspent-gmain;
+
+            }
+            else if(gty=="desperate")
+            {
+                ghap=Math.exp(boysarr[i].totalspent-gmain);
+
+            }
+            bhap = ghap;
+            hap=bhap+ghap;
+            couplesarr[k] = new couple(boysarr[i].name,gname,bhap,ghap,hap,0);
+            k++; 
+            break;
+            case "geek":
+            bhap = gint;
+            if(gty=="choosy")
+            {
+                ghap=Math.log((boysarr[i].totalspent-gmain));
+
+ 
+            }
+            else if (gty=="normal")
+            {
+                ghap=boysarr[i].totalspent-gmain;
+
+            }
+            else if(gty=="desperate")
+            {
+                ghap=Math.exp(boysarr[i].totalspent-gmain);
+
+            }
+            hap=bhap+ghap;
+            couplesarr[k] = new couple(boysarr[i].name,gname,bhap,ghap,hap,0);
+            k++; 
+            break;
+        }
+    }
 }
+for(i=0;i<k;i++)
+{
+    console.log(couplesarr[i].hap);
+}
+}
+happiness();
 function compatibility()
 {
     
