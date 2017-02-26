@@ -1,4 +1,12 @@
 var gjson = require("./girls.json");
+/**this is the girl class the constructor of which defines the girl object */
+/**@param {string} name- name of the girl
+ * @param {integer} inteligence- intelligence of the girl
+ * @param {integer} attractiveness- attractiveness of the girl
+ * @param {integer} maintenance- maintenance of the girl
+ * @param {string} committed- status of the boy
+ * @param {string} girlname- name of the girl the boy is dating
+ *  */
 class girl{
     constructor (name,intelligence,attractiveness,maintenance,committed,boyname)
 {
@@ -9,6 +17,8 @@ class girl{
     this.committed = committed;
     this.boyname = boyname;
 }
+/**function which creates an array of objects belonging to the girl class
+ */
 }
 function creategirl()
 {
@@ -21,5 +31,7 @@ function creategirl()
 
      }
 }
+ 
 creategirl();
+/**exporting the array created in the boycreate module */
 module.exports = girlsarr;

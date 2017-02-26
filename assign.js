@@ -1,4 +1,7 @@
 var arr = require("./pair.js");
+/**
+ * function to assign the type attribute to the committed boys and girls
+ */
 function assign()
  {
      var k = 0;

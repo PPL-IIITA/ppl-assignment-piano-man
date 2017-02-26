@@ -1,4 +1,32 @@
-var bjson = require("./boys.json");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: gifting.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: gifting.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var bjson = require("./boys.json");
 var gjson = require("./girls.json");
 var pjson = require("./gifts.json");
 var fs = require("fs");
@@ -29,7 +57,7 @@ class gift{
 function gifting()
  {
      giftsarr = new Array(50);
-      for(i=0;i<16;i++)
+      for(i=0;i&lt;16;i++)
      {
          giftsarr[i] = new gift("p"+i,pjson["p"+i].type,pjson["p"+i].price,pjson["p"+i].value,pjson["p"+i].fro,pjson["p"+i].to);
 
@@ -40,7 +68,7 @@ function gifting()
 
    
      //var len = Object.keys(pjson).length;
-     for(i=0;i<7;i++)
+     for(i=0;i&lt;7;i++)
      {
          
          if(arr.boysarr[i].committed=="true")
@@ -53,13 +81,13 @@ function gifting()
                  var k = 0;
                  var gname = arr.boysarr[i].girlname;
                  total = 0;
-                 while(total<=gjson[gname].maintenance&&k<=15)
+                 while(total&lt;=gjson[gname].maintenance&amp;&amp;k&lt;=15)
                  {
                      if(giftsarr[k].fro==" ")
                      {
                          total = total + giftsarr[k].price;
                          console.log(total);
-                         if(total<gjson[gname].maintenance)
+                         if(total&lt;gjson[gname].maintenance)
                          {
                              giftsarr[k].fro=arr.boysarr[i].name;
                              giftsarr[k].to=gname;
@@ -85,12 +113,12 @@ function gifting()
                  var k = 0;
                  var gname = arr.boysarr[i].girlname;
                  total = 0;
-                 while(total<=gjson[gname].maintenance&&k<=15)
+                 while(total&lt;=gjson[gname].maintenance&amp;&amp;k&lt;=15)
                  {
                      if(giftsarr[k].fro==" ")
                      {
                          total = total + giftsarr[k].price;
-                         if(total<gjson[gname].maintenance)
+                         if(total&lt;gjson[gname].maintenance)
                          {
                              giftsarr[k].fro=arr.boysarr[i].name;
                              giftsarr[k].to=gname;
@@ -110,15 +138,15 @@ function gifting()
                      else
                      k++;
                  }
-                 if(total<arr.boysarr[i].budget)
+                 if(total&lt;arr.boysarr[i].budget)
                  {
-                     for(m=0;m<16;m++)
+                     for(m=0;m&lt;16;m++)
                      {
                          if(giftsarr[m].fro==" ")
                          {
                          if(giftsarr[m].type="luxury")
                          {
-                             if(giftsarr[m].price<(arr.boysarr[i].budget-total))
+                             if(giftsarr[m].price&lt;(arr.boysarr[i].budget-total))
                              {
                                  giftsarr[m].fro=boysrr[i].name;
                                  giftsarr[m].to=gname;
@@ -143,12 +171,12 @@ function gifting()
                  var k = 0;
                  var gname = arr.boysarr[i].girlname;
                  total = 0;
-                 while(total<arr.boysarr[i].budget)
+                 while(total&lt;arr.boysarr[i].budget)
                  {
                      if(giftsarr[k].fro==" ")
                      {
                          total = total + giftsarr[k].price;
-                         if(total<arr.boysarr[i].budget)
+                         if(total&lt;arr.boysarr[i].budget)
                          {
                              giftsarr[k].fro=arr.boysarr[i].name;
                              giftsarr[k].to=gname;
@@ -185,4 +213,26 @@ function gifting()
  module.exports = { arr,
      giftsarr
 
- };
+ };</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="boy.html">boy</a></li><li><a href="couple.html">couple</a></li><li><a href="gift.html">gift</a></li><li><a href="girl.html">girl</a></li></ul><h3>Global</h3><ul><li><a href="global.html#assign">assign</a></li><li><a href="global.html#compatibility">compatibility</a></li><li><a href="global.html#createboy">createboy</a></li><li><a href="global.html#driver">driver</a></li><li><a href="global.html#gifting">gifting</a></li><li><a href="global.html#happiness">happiness</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sun Feb 26 2017 22:44:13 GMT+0530 (IST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
