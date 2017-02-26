@@ -1,4 +1,4 @@
-var arr = require("/home/piano-man/ppl_assignment/pair.js");
+var arr = require("./pair.js");
 function assign()
  {
      var k = 0;

@@ -1,4 +1,4 @@
-var gjson = require("/home/piano-man/ppl_assignment/girls.json");
+var gjson = require("./girls.json");
 class girl{
     constructor (name,intelligence,attractiveness,maintenance,committed,boyname)
 {

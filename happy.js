@@ -1,10 +1,10 @@
-var bjson = require("/home/piano-man/ppl_assignment/boys.json");
-var gjson = require("/home/piano-man/ppl_assignment/girls.json");
-var pjson = require("/home/piano-man/ppl_assignment/gifts.json");
+var bjson = require("./boys.json");
+var gjson = require("./girls.json");
+var pjson = require("./gifts.json");
 var fs = require("fs");
 
-var arr1 = require("/home/piano-man/ppl_assignment/gifting.js");
-//var arr1.arr.girlsarr = require("/home/piano-man/ppl_assignment/girlcreate.js");
+var arr1 = require("./gifting.js");
+//var arr1.arr.girlsarr = require("./girlcreate.js");
 
 
 class couple{
@@ -109,7 +109,11 @@ for(i=0;i<7;i++)
             break;
         }
     }
+    couplesarr.sort(function(a, b) {
+    return parseFloat(a.hap) - parseFloat(b.hap);
+});
 }
+cno = k;
 for(i=0;i<k;i++)
 {
     console.log(couplesarr[i].hap);
@@ -117,3 +121,40 @@ for(i=0;i<k;i++)
 }
 happiness();
 
+function compatibility()
+{
+    for(i=0;i<cno;i++)
+    {
+        bname = couplesarr[i].boyname;
+        gname = couplesarr[i].girlname;
+        for(k=0;k<7;k++)
+        {
+            if(bname==arr1.arr.boysarr[k].name)
+            {
+                bint=arr1.arr.boysarr[k].intelligence;
+                battr=arr1.arr.boysarr[k].attractiveness;
+                bbudget = arr1.arr.boysarr[k].budget;
+                break;
+            }
+
+        }
+        for(j=0;j<4;j++)
+        {
+            if(gname=arr1.arr.girlsarr[j].name)
+            {
+                gint = arr1.arr.girlsarr[j].intelligence;
+                gattr = arr1.arr.girlsarr[j].attractiveness;
+                gmain = arr1.arr.girlsarr[j].maintenance;
+                break;
+            }
+
+        }
+        couplesarr[i].comp = (bbudget-gmain)+Math.abs((bint-gint))+Math.abs((battr-gattr));
+        console.log(couplesarr[i].comp);
+    }
+    couplesarr.sort(function(a, b) {
+    return parseFloat(a.comp) - parseFloat(b.comp);
+});
+
+}
+compatibility();

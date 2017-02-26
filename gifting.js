@@ -1,9 +1,9 @@
-var bjson = require("/home/piano-man/ppl_assignment/boys.json");
-var gjson = require("/home/piano-man/ppl_assignment/girls.json");
-var pjson = require("/home/piano-man/ppl_assignment/gifts.json");
+var bjson = require("./boys.json");
+var gjson = require("./girls.json");
+var pjson = require("./gifts.json");
 var fs = require("fs");
 
-var arr = require("/home/piano-man/ppl_assignment/assign.js");
+var arr = require("./assign.js");
 class gift{
     constructor(name,type,price,value,fro,to)
     {
@@ -53,7 +53,7 @@ function gifting()
                              giftsarr[k].fro=arr.boysarr[i].name;
                              giftsarr[k].to=gname;
                              var print = arr.boysarr[i].name+"gave"+giftsarr[k].name+"to"+gname;
-                             fs.appendFile("/home/piano-man/ppl_assignment/gifts.txt",print+"\n",function(err){
+                             fs.appendFile("./gifts.txt",print+"\n",function(err){
                                  if(err){
                                      return err;
                                  }
@@ -84,7 +84,7 @@ function gifting()
                              giftsarr[k].fro=arr.boysarr[i].name;
                              giftsarr[k].to=gname;
                              var print = arr.boysarr[i].name+"gave"+giftsarr[k].name+"to"+gname;
-                             fs.appendFile("/home/piano-man/ppl_assignment/gifts.txt",print+"\n",function(err){
+                             fs.appendFile("./gifts.txt",print+"\n",function(err){
                                  if(err){
                                      return err;
                                  }
@@ -112,7 +112,7 @@ function gifting()
                                  giftsarr[m].fro=boysrr[i].name;
                                  giftsarr[m].to=gname;
                                  var print = arr.boysarr[i].name+"gave"+giftsarr[m].name+"to"+gname;
-                             fs.appendFile("/home/piano-man/ppl_assignment/gifts.txt",print+"\n",function(err){
+                             fs.appendFile("./gifts.txt",print+"\n",function(err){
                                  if(err){
                                      return err;
                                  }
@@ -142,7 +142,7 @@ function gifting()
                              giftsarr[k].fro=arr.boysarr[i].name;
                              giftsarr[k].to=gname;
                              var print = arr.boysarr[i].name+"gave"+giftsarr[k].name+"to"+gname;
-                             fs.appendFile("/home/piano-man/ppl_assignment/gifts.txt",print+"\n",function(err){
+                             fs.appendFile("./gifts.txt",print+"\n",function(err){
                                  if(err){
                                      return err;
                                  }

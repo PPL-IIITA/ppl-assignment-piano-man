@@ -1,5 +1,5 @@
-var boysarr = require("/home/piano-man/ppl_assignment/boycreate.js");
-var girlsarr = require("/home/piano-man/ppl_assignment/girlcreate.js");
+var boysarr = require("./boycreate.js");
+var girlsarr = require("./girlcreate.js");
 var fs = require("fs");
 
 function driver()
@@ -41,7 +41,7 @@ for(i=0;i<7;i++)
     {
         var x = boysarr[i].name+" is dating "+boysarr[i].girlname + "\n";
         //console.log(x);
-        fs.appendFile("/home/piano-man/ppl_assignment/log.txt",x,function(err){
+        fs.appendFile("./log.txt",x,function(err){
             if(err)
             return console.log("error detected");
         });
