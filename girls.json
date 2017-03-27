@@ -1,40 +1,40 @@
 {
     "g0":{
         
-        "attractiveness":8,
         "intelligence":6,
-        "maintenance":300,
+        "attractiveness":8,
         "committed":"false",
+        "maintenance":300,
         "boyname":" ",
         "type":" "
 
     },
     "g1":{
         
-        "attractiveness":15,
         "intelligence":7,
+        "attractiveness":15,
+       "committed":"false",
         "maintenance":450,
-        "committed":"false",
         "boyname":" ",
         "type":" "
 
     },
     "g2":{
         
-        "attractiveness":11,
         "intelligence":7,
-        "maintenance":700,
+        "attractiveness":11,
         "committed":"false",
+        "maintenance":700,
         "boyname":" ",
         "type":" "
 
     },
     "g3":{
     
-        "attractiveness":10,
         "intelligence":9,
-        "maintenance":900,
+        "attractiveness":10,
         "committed":"false",
+        "maintenance":900,
         "boyname":" ",
         "type":" "
 

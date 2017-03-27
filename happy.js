@@ -171,3 +171,6 @@ function compatibility()
 
 }
 compatibility();
+
+module.exports = {
+couplesarr,arr1} ;
