@@ -23,15 +23,17 @@ while (i < 4) {
                         i++;
                         break;
                     }
-                    else
+                    else{
                         i++;
                     break;
+                    }
                 }
 
 
-                else
+                else{
                     i++;
                 break;
+                }
             }
         }
         else
@@ -64,7 +66,21 @@ while (i < 4) {
         }
     }
 }
+for(i=0;i<7;i++)
+{
+    if(boysarr[i].committed=="true")
+    {
+        var x = boysarr[i].name+" is dating "+boysarr[i].girlname + "\n";
+        //console.log(x);
+        fs.appendFile("./log.txt",x,function(err){
+            if(err)
+            return console.log("error detected");
+        });
 }
+        
+}
+}
+driver();
  module.exports = {
      boysarr,
  girlsarr} ;

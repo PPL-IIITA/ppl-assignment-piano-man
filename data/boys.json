@@ -6,7 +6,8 @@
          "committed":"false",
         "budget":500,
         "minval":6,
-        "girlname":" "
+        "girlname":" ",
+        "gifts" : []
         
 
     },

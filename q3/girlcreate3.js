@@ -1,5 +1,5 @@
-var gjson = require("./girls.json");
-var create = require("./inheritance.js")
+var gjson = require("./data/girls.json");
+var create = require("./q3/inheritance.js")
 /**this is the girl class the constructor of which defines the girl object */
 /**@param {string} name- name of the girl
  * @param {integer} inteligence- intelligence of the girl
@@ -9,8 +9,9 @@ var create = require("./inheritance.js")
  * @param {string} girlname- name of the girl the boy is dating
  *  */
 class girl extends create{
-    makegirl (name,maintenance,boyname)
+    constructor (intelligence,attractiveness,committed,name,maintenance,boyname)
 {
+    super(intelligence,attractiveness,committed);
     this.name = name;
     this.maintenance = maintenance;
     this.boyname = boyname;
@@ -26,9 +27,9 @@ function creategirl()
      {
          //var m = "g"+i;
          //girlsarr[i] = new girl("g"+i,gjson["g"+i].intelligence,gjson["g"+i].attractiveness,gjson["g"+i].maintenance,gjson["g"+i].committed,gjson["g"+i].boyname);
-        girlsarr[i]=new girl()
-            girlsarr[i].makegirl("g"+i,gjson["g"+i].maintenance,gjson["g"+i].boyname);
-            girlsarr[i].make(gjson["g"+i].intelligence,gjson["g"+i].attractiveness,gjson["g"+i].committed);
+        girlsarr[i]=new girl(gjson["g"+i].intelligence,gjson["g"+i].attractiveness,gjson["g"+i].committed,"g"+i,gjson["g"+i].maintenance,gjson["g"+i].boyname)
+            //girlsarr[i].makegirl("g"+i,gjson["g"+i].maintenance,gjson["g"+i].boyname);
+            //girlsarr[i].make(gjson["g"+i].intelligence,gjson["g"+i].attractiveness,gjson["g"+i].committed);
         
      }
 }

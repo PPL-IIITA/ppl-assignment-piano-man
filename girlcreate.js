@@ -1,4 +1,4 @@
-var gjson = require("./girls.json");
+var gjson = require("./data/girls.json");
 /**this is the girl class the constructor of which defines the girl object */
 /**@param {string} name- name of the girl
  * @param {integer} inteligence- intelligence of the girl

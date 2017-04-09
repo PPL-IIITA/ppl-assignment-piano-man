@@ -1,5 +1,5 @@
-var bjson = require("./boys.json");
-var create = require("./inheritance.js");
+var bjson = require("./data/boys.json");
+var create = require("./q3/inheritance.js");
 /**this is the boy class the constructor of which defines the boy object */
 /**@param {string} name- name of the boy
  * @param {integer} inteligence- intelligence of the boy
@@ -10,8 +10,9 @@ var create = require("./inheritance.js");
  * @param {integer} minval- minimum attractiveness of the girl
  *  */
 class boy extends create{
-    makeboy (name,budget,committed,girlname,minval)
+    constructor (intelligence,attractiveness,committed,name,budget,girlname,minval)
 {
+    super(intelligence,attractiveness,committed);
     this.name = name;
     this.budget = budget;
     this.girlname = girlname;
@@ -29,9 +30,9 @@ function createboy()
          //var m = "b"+i;
          //console.log(m);
          //boysarr[i] = new boy("b"+i,bjson["b"+i].intelligence,bjson["b"+i].attractiveness,bjson["b"+i].budget,bjson["b"+i].committed,bjson["b"+i].girlname,bjson["b"+i].minval);
-         boysarr[i]=new boy();
-            boysarr[i].makeboy("b"+i,bjson["b"+i].bodget,bjson["b"+i].girlname,bjson["b"+i].minval);
-            boysarr[i].make(bjson["b"+i].intelligence,bjson["b"+i].attractiveness,bjson["b"+i].committed);
+         boysarr[i]=new boy(bjson["b"+i].intelligence,bjson["b"+i].attractiveness,bjson["b"+i].committed,"b"+i,bjson["b"+i].bodget,bjson["b"+i].girlname,bjson["b"+i].minval);
+           // boysarr[i].makeboy("b"+i,bjson["b"+i].bodget,bjson["b"+i].girlname,bjson["b"+i].minval);
+           // boysarr[i].make(bjson["b"+i].intelligence,bjson["b"+i].attractiveness,bjson["b"+i].committed);
 
      }
  }
