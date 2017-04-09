@@ -1,4 +1,4 @@
-var arr = require("./q3/pair.js");
+var arr = require("./../q3/pair.js");
 /**
  * function to assign the type attribute to the committed boys and girls
  */

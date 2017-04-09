@@ -1,5 +1,5 @@
-var boysarr = require("./../q3/boycreate3.js");
-var girlsarr = require("./../q3/girlcreate3.js");
+var boysarr = require("./boycreate.js");
+var girlsarr = require("./girlcreate.js");
 var fs = require("fs");
 /**function to check minimum attractiveness conditions , budget conditions and log committed couples to log.txt file  */
 function driver()

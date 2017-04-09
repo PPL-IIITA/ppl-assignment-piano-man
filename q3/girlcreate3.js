@@ -1,5 +1,5 @@
-var gjson = require("./data/girls.json");
-var create = require("./q3/inheritance.js")
+var gjson = require("./../data/girls.json");
+var create = require("./../q3/inheritance.js").create;
 /**this is the girl class the constructor of which defines the girl object */
 /**@param {string} name- name of the girl
  * @param {integer} inteligence- intelligence of the girl

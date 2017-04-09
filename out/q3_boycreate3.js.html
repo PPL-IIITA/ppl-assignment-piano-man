@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: boycreate.js</title>
+    <title>JSDoc: Source: q3/boycreate3.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: boycreate.js</h1>
+    <h1 class="page-title">Source: q3/boycreate3.js</h1>
 
     
 
@@ -26,7 +26,8 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>var bjson = require("./data/boys.json");
+            <pre class="prettyprint source linenums"><code>var bjson = require("./../data/boys.json");
+var create = require("./../q3/inheritance.js").create;
 /**this is the boy class the constructor of which defines the boy object */
 /**@param {string} name- name of the boy
  * @param {integer} inteligence- intelligence of the boy
@@ -36,14 +37,12 @@
  * @param {string} girlname- name of the girl the boy is dating
  * @param {integer} minval- minimum attractiveness of the girl
  *  */
-class boy{
-    constructor (name,intelligence,attractiveness,budget,committed,girlname,minval)
+class boy extends create{
+    constructor (intelligence,attractiveness,committed,name,budget,girlname,minval)
 {
+    super(intelligence,attractiveness,committed);
     this.name = name;
-    this.intelligence = intelligence;
-    this.attractiveness = attractiveness;
     this.budget = budget;
-    this.committed = committed;
     this.girlname = girlname;
     this.minval = minval;
 }
@@ -58,7 +57,10 @@ function createboy()
      {
          //var m = "b"+i;
          //console.log(m);
-         boysarr[i] = new boy("b"+i,bjson["b"+i].intelligence,bjson["b"+i].attractiveness,bjson["b"+i].budget,bjson["b"+i].committed,bjson["b"+i].girlname,bjson["b"+i].minval);
+         //boysarr[i] = new boy("b"+i,bjson["b"+i].intelligence,bjson["b"+i].attractiveness,bjson["b"+i].budget,bjson["b"+i].committed,bjson["b"+i].girlname,bjson["b"+i].minval);
+         boysarr[i]=new boy(bjson["b"+i].intelligence,bjson["b"+i].attractiveness,bjson["b"+i].committed,"b"+i,bjson["b"+i].bodget,bjson["b"+i].girlname,bjson["b"+i].minval);
+           // boysarr[i].makeboy("b"+i,bjson["b"+i].bodget,bjson["b"+i].girlname,bjson["b"+i].minval);
+           // boysarr[i].make(bjson["b"+i].intelligence,bjson["b"+i].attractiveness,bjson["b"+i].committed);
 
      }
  }

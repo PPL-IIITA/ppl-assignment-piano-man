@@ -1,6 +1,7 @@
 var arr2 = require("./happy.js");
 var fs = require('fs');
-/**function to perform breakup of a given set of couples  */
+var t = 16;
+/**function to perform breakup of a given set of couples t number of times  */
 function breakup() {
 
 
@@ -17,9 +18,7 @@ function breakup() {
 
     }
 }
-
-
-/**function to form a new set of couples after breakup  */
+/**function to form new couples after every breakup  */
 function newpair() {
     var k = 0;
 
@@ -64,5 +63,8 @@ function newpair() {
 
     }
 }
+for(i=0;i<t;i++)
+{
 breakup();
 newpair();
+}

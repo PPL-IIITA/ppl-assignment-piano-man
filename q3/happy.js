@@ -1,6 +1,6 @@
-var bjson = require("./data/boys.json");
-var gjson = require("./data/girls.json");
-var pjson = require("./data/gifts.json");
+var bjson = require("./../data/boys.json");
+var gjson = require("./../data/girls.json");
+var pjson = require("./../data/gifts.json");
 var fs = require("fs");
 
 var arr1 = require("./gifting.js");

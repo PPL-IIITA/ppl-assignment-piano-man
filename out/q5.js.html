@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: pair.js</title>
+    <title>JSDoc: Source: q5.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: pair.js</h1>
+    <h1 class="page-title">Source: q5.js</h1>
 
     
 
@@ -29,40 +29,72 @@
             <pre class="prettyprint source linenums"><code>var boysarr = require("./boycreate.js");
 var girlsarr = require("./girlcreate.js");
 var fs = require("fs");
-/**function to check minimum attractiveness conditions , budget conditions and log committed couples to log.txt file  */
-function driver()
- {
-   
-     var k = 0;
-     
-     for(k=0;k&lt;7;k++)
-     {
-         var j=0;
-    while(j&lt;4)
-    {
-        if(girlsarr[j].committed=="false")
-        {
-        if(boysarr[k].minval&lt;girlsarr[j].attractiveness)
-        {
-            if(boysarr[k].budget&lt;=girlsarr[j].maintenance)
-            {
-                boysarr[k].committed="true";
-                boysarr[k].girlname="g"+j;
-                girlsarr[j].boyname="b"+k;
-                girlsarr[j].committed="true";
+/**function to form couples based on a different method  */
+function driver1(){
+    
+boysarr.sort(function (a, b) {
+    return parseFloat(a.attractiveness) - parseFloat(b.attractiveness)
+})
+girlsarr.sort(function (a, b) {
+    return parseFloat(a.maintenance) - parseFloat(b.maintenance)
+})
+i = 0;
+while (i &lt; 4) {
+    if (i % 2 == 0) {
+        if (girlsarr[i].committed == "false") {
+            for (k = 0; k &lt; 7; k++) {
+                if (boysarr[k].minval &lt; girlsarr[i].attractiveness) {
+                    if (boysarr[k].budget &lt;= girlsarr[i].maintenance) {
+                        boysarr[k].committed = "true";
+                        boysarr[k].girlname = "g" + i;
+                        girlsarr[i].boyname = "b" + k;
+                        girlsarr[i].committed = "true";
+                        i++;
+                        break;
+                    }
+                    else{
+                        i++;
+                    break;
+                    }
+                }
+
+
+                else{
+                    i++;
                 break;
+                }
             }
-            else
-            j++;
         }
         else
-        j++;
+            i++;
+        //break;
     }
-    else
-    j++;
+
+    else {
+        for (i = 0; i &lt; 7; i++) {
+            if (boysarr[i].committed == "false") {
+                for (m = 0; m &lt; 4; m++) {
+                    if (girlsarr[m].committed == "false") {
+                        if (boysarr[i].minval &lt; girlsarr[m].attractiveness) {
+                            if (boysarr[i].budget &lt;= girlsarr[m].maintenance) {
+                                boysarr[i].committed = "true";
+                                boysarr[i].girlname = "g" + m;
+                                girlsarr[m].boyname = "b" + i;
+                                girlsarr[m].committed = "true";
+                                break;
+
+
+                            }
+                        }
+
+                    }
+                }
+
+            break;
+        }
+        }
+    }
 }
-     }
-     
 for(i=0;i&lt;7;i++)
 {
     if(boysarr[i].committed=="true")
@@ -76,8 +108,8 @@ for(i=0;i&lt;7;i++)
 }
         
 }
- }
- driver();
+}
+driver1();
  module.exports = {
      boysarr,
  girlsarr} ;</code></pre>
