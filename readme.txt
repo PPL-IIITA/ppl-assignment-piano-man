@@ -1,4 +1,7 @@
 Enrollment Number : ICM2015003
+
+NOTE :- INHERITANCE HAS BEEN USED WHEREVER POSSIBLE HOWEVER THE AVAILABILITY OF "module.exports" OBJECT IN JAVASCRIPT MAKES THE USE OF INHERITANCE REDUNDANT IN SOME PLACES.
+
 The given files constitute question1 and question2 of the given assignment.
 The assignment has been completed using javascript.
 The files must be compiled using node js compiler.

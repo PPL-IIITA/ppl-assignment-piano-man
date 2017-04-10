@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: q8/giftsystem2.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: q8/giftsystem2.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var pjson = require('./../data/gifts.json');
+var readline = require('readline');
+var arr = require("./../assign.js");
+var bjson = require("./../data/boys.json");
+var gjson = require("./../data/girls.json");
+var Giftcreate = require('./../giftcreate.js').Giftcreate;
+var rl = readline.createInterface(process.stdin, process.stdout);
+var fs = require("fs");
+/**this is the class to implement giftsystem2 */
+class giftsystem2
+{
+    constructor()
+    {
+        for (i = 0; i &lt; 7; i++) {
+                var count = new Array(3);
+                var l = 0;
+                var k =0;
+                if (arr.boysarr[i].committed == "true") {
+                    var ty = arr.boysarr[i].type;
+                    while (k &lt; 16 &amp;&amp; count &lt; 3) {
+
+                        if (giftsarr[k].fro == " " &amp;&amp; giftsarr[k].type == "essential" &amp;&amp; l &lt; 3) {
+                            flag = 0;
+                            for (i = 0; i &lt; 3; i++) {
+                                if (count[i] == "essential") {
+                                    flag = 1;
+                                    break;
+
+                                }
+                            }
+                            if (flag == 0) {
+                                var gname = arr.boysarr[i].girlname;
+                                total = total + giftsarr[k].price;
+                                giftsrr[k].to = gname;
+                                giftsarr[k].from = boysarr[i].name
+                                var print = arr.boysarr[i].name + "gave" + giftsarr[k].name + "to" + gname;
+                                fs.appendFile("./gifts.txt", print + "\n", function (err) {
+                                    if (err) {
+                                        return err;
+                                    }
+                                });
+                                k++;
+                                count[l] = "essential";
+                                l++;
+                            }
+                        }
+                        if (giftsarr[k].fro == " " &amp;&amp; giftsarr[k].type == "utility" &amp;&amp; l &lt; 3) {
+                            flag = 0;
+                            for (i = 0; i &lt; 3; i++) {
+                                if (count[i] == "utility") {
+                                    flag = 1;
+                                    break;
+
+                                }
+                            }
+                            if (flag == 0) {
+                                var gname = arr.boysarr[i].girlname;
+                                total = total + giftsarr[k].price;
+                                giftsrr[k].to = gname;
+                                giftsarr[k].from = boysarr[i].name
+                                var print = arr.boysarr[i].name + "gave" + giftsarr[k].name + "to" + gname;
+                                fs.appendFile("./gifts.txt", print + "\n", function (err) {
+                                    if (err) {
+                                        return err;
+                                    }
+                                });
+                                k++;
+                                count[l] = "utility";
+                                l++;
+                            }
+                        }
+                        if (giftsarr[k].fro == " " &amp;&amp; giftsarr[k].type == "luxury" &amp;&amp; l &lt; 3) {
+                            flag = 0;
+                            for (i = 0; i &lt; 3; i++) {
+                                if (count[i] == "luxury") {
+                                    flag = 1;
+                                    break;
+
+                                }
+                            }
+                            if (flag == 0) {
+                                var gname = arr.boysarr[i].girlname;
+                                total = total + giftsarr[k].price;
+                                giftsrr[k].to = gname;
+                                giftsarr[k].from = boysarr[i].name
+                                var print = arr.boysarr[i].name + "gave" + giftsarr[k].name + "to" + gname;
+                                fs.appendFile("./gifts.txt", print + "\n", function (err) {
+                                    if (err) {
+                                        return err;
+                                    }
+                                });
+                                k++;
+                                count[l] = "luxury";
+                                l++;
+                            }
+                        }
+                        if (total &lt; boysarr[i].budget) {
+                            for (j = 0; j &lt; 16; j++) {
+                                if (giftsarr[j].from == "") {
+                                    if (giftsarr[j].price + total &lt; boysarr[i].budget) {
+                                        var gname = arr.boysarr[i].girlname;
+                                        total = total + giftsarr[k].price;
+                                        giftsrr[j].to = gname;
+                                        giftsarr[j].from = boysarr[i].name
+                                        var print = arr.boysarr[i].name + "gave" + giftsarr[j].name + "to" + gname;
+                                        fs.appendFile("./gifts.txt", print + "\n", function (err) {
+                                            if (err) {
+                                                return err;
+                                            }
+                                        });
+                                    }
+                                    else
+                                        continue;
+                                }
+
+
+                            }
+                        }
+
+
+
+                    }
+
+                }
+            }
+
+    
+    }
+}
+module.exports = {giftsystem2};</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="boy.html">boy</a></li><li><a href="couple.html">couple</a></li><li><a href="create.html">create</a></li><li><a href="gift.html">gift</a></li><li><a href="Giftcreate.html">Giftcreate</a></li><li><a href="giftsystem1.html">giftsystem1</a></li><li><a href="giftsystem2.html">giftsystem2</a></li><li><a href="girl.html">girl</a></li></ul><h3>Global</h3><ul><li><a href="global.html#assign">assign</a></li><li><a href="global.html#breakup">breakup</a></li><li><a href="global.html#compatibility">compatibility</a></li><li><a href="global.html#createboy">createboy</a></li><li><a href="global.html#driver">driver</a></li><li><a href="global.html#driver1">driver1</a></li><li><a href="global.html#execute">execute</a></li><li><a href="global.html#gifting">gifting</a></li><li><a href="global.html#happiness">happiness</a></li><li><a href="global.html#newpair">newpair</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Apr 10 2017 09:22:10 GMT+0530 (IST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
