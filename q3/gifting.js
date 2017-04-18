@@ -28,6 +28,7 @@ class gift{
  */
 function gifting()
  {
+     try{
      giftsarr = new Array(50);
       for(i=0;i<16;i++)
      {
@@ -177,6 +178,11 @@ function gifting()
          
 
 
+     }
+     }
+     catch(err)
+     {
+         console.log(err);
      }
      
 

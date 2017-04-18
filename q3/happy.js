@@ -32,6 +32,7 @@ class couple{
  */
  function happiness()
 {
+    try{
     couplesarr = new Array(50);
     var k = 0;
 for(i=0;i<7;i++)
@@ -129,6 +130,11 @@ for(i=0;i<k;i++)
 {
     console.log(couplesarr[i].hap);
 }
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
 }
 happiness();
 /**

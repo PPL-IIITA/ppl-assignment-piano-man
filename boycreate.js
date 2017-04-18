@@ -24,6 +24,7 @@ class boy{
  */
 function createboy()
  {
+     try{
      boysarr = new Array(10);
     
      for(i=0;i<7;i++)
@@ -33,6 +34,12 @@ function createboy()
          boysarr[i] = new boy("b"+i,bjson["b"+i].intelligence,bjson["b"+i].attractiveness,bjson["b"+i].budget,bjson["b"+i].committed,bjson["b"+i].girlname,bjson["b"+i].minval);
 
      }
+ }
+ catch(err)
+ {
+     console.log(err);
+ }
+
  }
  /**call to the createboy function */
 createboy();

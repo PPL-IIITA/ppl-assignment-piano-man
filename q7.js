@@ -12,6 +12,7 @@ rl.question('choose the type of implementation you want', function (answer) {
 })
 /**function to find girlfriends of a given set of boys with three possible implementations  */
 function execute() {
+    try{
     //console.log("hello");
     switch (imp) {
         case "1":
@@ -85,5 +86,10 @@ function execute() {
 
         }
         break;
+    }
+    }
+    catch(err)
+    {
+        console.log(err);
     }
 }

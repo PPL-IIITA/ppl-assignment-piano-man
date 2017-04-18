@@ -21,6 +21,9 @@ class girl extends create{
 }
 function creategirl()
 {
+    try{
+
+    
      girlsarr = new Array(10);
     
      for(i=0;i<4;i++)
@@ -32,6 +35,11 @@ function creategirl()
             //girlsarr[i].make(gjson["g"+i].intelligence,gjson["g"+i].attractiveness,gjson["g"+i].committed);
         
      }
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
 }
  
 creategirl();

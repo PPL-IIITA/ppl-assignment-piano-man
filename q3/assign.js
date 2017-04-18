@@ -4,6 +4,7 @@ var arr = require("./../q3/pair.js");
  */
 function assign()
  {
+     try{
      var k = 0;
      var l = 0;
      var btype = [
@@ -36,6 +37,11 @@ function assign()
          arr.girlsarr[l]["type"]=gtype[rno];
      }
  }
+     }
+     catch(err)
+     {
+         console.log(err);
+     }
 
 
  }

@@ -32,6 +32,7 @@ class couple{
  */
  function happiness()
 {
+    try{
     couplesarr = new Array(50);
     var k = 0;
 for(i=0;i<7;i++)
@@ -129,6 +130,11 @@ for(i=0;i<k;i++)
 {
     console.log(couplesarr[i].hap);
 }
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
 }
 happiness();
 /**
@@ -136,6 +142,9 @@ happiness();
  */
 function compatibility()
 {
+    try{
+
+
     for(i=0;i<cno;i++)
     {
         bname = couplesarr[i].boyname;
@@ -168,7 +177,11 @@ function compatibility()
     couplesarr.sort(function(a, b) {
     return parseFloat(a.comp) - parseFloat(b.comp);
 });
-
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
 }
 compatibility();
 

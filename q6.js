@@ -3,6 +3,7 @@ var fs = require('fs');
 var t = 16;
 /**function to perform breakup of a given set of couples t number of times  */
 function breakup() {
+    try{
 
 
     for (i = 0; i < k; i++) {
@@ -17,9 +18,15 @@ function breakup() {
         arr2.couplesarr[i].comp = 0;
 
     }
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
 }
 /**function to form new couples after every breakup  */
 function newpair() {
+    try{
     var k = 0;
 
     for (k = 0; k < 7; k++) {
@@ -61,6 +68,11 @@ function newpair() {
             });
         }
 
+    }
+    }
+    catch(err)
+    {
+        console.log(err);
     }
 }
 for(i=0;i<t;i++)

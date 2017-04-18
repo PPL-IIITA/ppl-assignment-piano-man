@@ -11,6 +11,7 @@ class giftsystem2
 {
     constructor()
     {
+        try{
         for (i = 0; i < 7; i++) {
                 var count = new Array(3);
                 var l = 0;
@@ -123,6 +124,11 @@ class giftsystem2
 
                 }
             }
+        }
+        catch(err)
+        {
+            console.log(err);
+        }
 
     
     }

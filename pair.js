@@ -4,6 +4,7 @@ var fs = require("fs");
 /**function to check minimum attractiveness conditions , budget conditions and log committed couples to log.txt file  */
 function driver()
  {
+     try{
    
      var k = 0;
      
@@ -48,7 +49,13 @@ for(i=0;i<7;i++)
 }
         
 }
+     }
+     catch(err)
+     {
+         console.log(err);
+     }
  }
+
  driver();
  module.exports = {
      boysarr,

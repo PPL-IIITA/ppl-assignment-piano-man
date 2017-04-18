@@ -21,6 +21,7 @@ function breakup() {
 
 /**function to form a new set of couples after breakup  */
 function newpair() {
+    try{
     var k = 0;
 
     for (k = 0; k < 7; k++) {
@@ -62,6 +63,11 @@ function newpair() {
             });
         }
 
+    }
+    }
+    catch(err)
+    {
+        console.log(err);
     }
 }
 breakup();

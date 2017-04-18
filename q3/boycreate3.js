@@ -23,6 +23,7 @@ class boy extends create{
  */
 function createboy()
  {
+     try{
      boysarr = new Array(10);
     
      for(i=0;i<7;i++)
@@ -34,6 +35,11 @@ function createboy()
            // boysarr[i].makeboy("b"+i,bjson["b"+i].bodget,bjson["b"+i].girlname,bjson["b"+i].minval);
            // boysarr[i].make(bjson["b"+i].intelligence,bjson["b"+i].attractiveness,bjson["b"+i].committed);
 
+     }
+     }
+     catch(err)
+     {
+         console.log(err);
      }
  }
  /**call to the createboy function */

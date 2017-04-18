@@ -14,6 +14,7 @@ class giftsystem1
 {
     constructor()
     {
+        try{
          for (i = 0; i < 7; i++) {
 
                 if (arr.boysarr[i].committed == "true") {
@@ -135,6 +136,11 @@ class giftsystem1
 
 
             }
+        }
+        catch(err)
+        {
+            console.log(err);
+        }
     }
 }
 module.exports = {giftsystem1};

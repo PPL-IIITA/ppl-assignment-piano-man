@@ -3,6 +3,7 @@ var girlsarr = require("./girlcreate.js");
 var fs = require("fs");
 /**function to form couples based on a different method  */
 function driver1(){
+    try{
     
 boysarr.sort(function (a, b) {
     return parseFloat(a.attractiveness) - parseFloat(b.attractiveness)
@@ -80,6 +81,11 @@ for(i=0;i<7;i++)
 }
         
 }
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
 }
 driver1();
  module.exports = {
